@@ -23,7 +23,7 @@ class ActivityViewController: UIViewController {
     var motionManager: CMMotionManager!
     
     var dataSet: LineChartDataSet!
-    var rawDataSet: BoundedArray<ChartDataEntry>!
+    var accelDataSet: AccelerometerDataSet!
     
     @IBAction func switchListener(_ sender: AnyObject) {
         if accelSwitch.isOn {
@@ -50,22 +50,37 @@ class ActivityViewController: UIViewController {
     
     func accelUpdateHandler(data: CMAccelerometerData?, error: Error?) {
         if let accel = data?.acceleration {
-            self.rawDataSet.boundedAppend(obj: ChartDataEntry(x: data!.timestamp, y: accel.x))
+            self.accelDataSet.append(data: data!)
             self.chartUpdateHandler()
             
             // dispatch UI update on main thread
             DispatchQueue.main.async {
-                self.xAccel.text = String(format:"%f", accel.x)
-                self.yAccel.text = String(format:"%f", accel.y)
-                self.zAccel.text = String(format:"%f", accel.z)
+                self.xAccel.text = String(format:"%f", accel.x * 10.0)
+                self.yAccel.text = String(format:"%f", accel.y * 10.0)
+                self.zAccel.text = String(format:"%f", accel.z * 10.0)
                 
             }
         }
     }
     
     func chartUpdateHandler() {
-        dataSet = LineChartDataSet(values: rawDataSet.array, label: "X")
-        let lineChartData = LineChartData(dataSet: dataSet)
+        let xSet = LineChartDataSet(values: accelDataSet.xSet.array, label: "X")
+        xSet.setColor(NSUIColor.red)
+        xSet.drawCirclesEnabled = false
+        xSet.drawValuesEnabled = false
+        
+        let ySet = LineChartDataSet(values: accelDataSet.ySet.array, label: "Y")
+        ySet.setColor(NSUIColor.blue)
+        ySet.drawCirclesEnabled = false
+        ySet.drawValuesEnabled = false
+        
+        let zSet = LineChartDataSet(values: accelDataSet.zSet.array, label: "Z")
+        zSet.setColor(NSUIColor.green)
+        zSet.drawCirclesEnabled = false
+        zSet.drawValuesEnabled = false
+        
+        let lineChartData = LineChartData(dataSets: [xSet, ySet, zSet])
+        
         
         // dispatch UI update on main thread
         DispatchQueue.main.async {
@@ -76,11 +91,10 @@ class ActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         motionManager = CMMotionManager()
-        rawDataSet = BoundedArray(bound: 100)
+        accelDataSet = AccelerometerDataSet(bound: 100, multiplier: 10.0)
         
         lineChartView.backgroundColor = NSUIColor.clear
-        lineChartView.leftAxis.axisMinimum = 0.0
-        lineChartView.rightAxis.axisMinimum = 0.0
+        lineChartView.xAxis.drawLabelsEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
