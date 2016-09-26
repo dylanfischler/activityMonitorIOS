@@ -10,9 +10,7 @@
 		B94EB0D41D9891ED00A4A761 /* SensorSampleRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB0D31D9891ED00A4A761 /* SensorSampleRate.swift */; };
 		B94EB0E41D989C5F00A4A761 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94EB0DD1D989C1B00A4A761 /* Charts.framework */; };
 		B94EB0E51D989C5F00A4A761 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B94EB0DD1D989C1B00A4A761 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B94EB1111D98A5C500A4A761 /* AccelerometerGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB1101D98A5C500A4A761 /* AccelerometerGraph.swift */; };
 		B94EB1131D98B34E00A4A761 /* BoundedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB1121D98B34E00A4A761 /* BoundedArray.swift */; };
-		B94EB1151D98B61400A4A761 /* AccelerometerDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB1141D98B61400A4A761 /* AccelerometerDataSet.swift */; };
 		B9B68AA31D9887C200D0D386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B68AA21D9887C200D0D386 /* AppDelegate.swift */; };
 		B9B68AA51D9887C200D0D386 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B68AA41D9887C200D0D386 /* ActivityViewController.swift */; };
 		B9B68AA71D9887C200D0D386 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B68AA61D9887C200D0D386 /* SecondViewController.swift */; };
@@ -76,9 +74,7 @@
 /* Begin PBXFileReference section */
 		B94EB0D31D9891ED00A4A761 /* SensorSampleRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorSampleRate.swift; sourceTree = "<group>"; };
 		B94EB0D51D989C1B00A4A761 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
-		B94EB1101D98A5C500A4A761 /* AccelerometerGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerGraph.swift; sourceTree = "<group>"; };
 		B94EB1121D98B34E00A4A761 /* BoundedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundedArray.swift; sourceTree = "<group>"; };
-		B94EB1141D98B61400A4A761 /* AccelerometerDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerDataSet.swift; sourceTree = "<group>"; };
 		B9B68A9F1D9887C200D0D386 /* ActivityMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B68AA21D9887C200D0D386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9B68AA41D9887C200D0D386 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +119,7 @@
 		B94EB10F1D98A5B100A4A761 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B94EB1101D98A5C500A4A761 /* AccelerometerGraph.swift */,
 				B94EB1121D98B34E00A4A761 /* BoundedArray.swift */,
-				B94EB1141D98B61400A4A761 /* AccelerometerDataSet.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -277,9 +271,7 @@
 			files = (
 				B9B68AA71D9887C200D0D386 /* SecondViewController.swift in Sources */,
 				B94EB0D41D9891ED00A4A761 /* SensorSampleRate.swift in Sources */,
-				B94EB1111D98A5C500A4A761 /* AccelerometerGraph.swift in Sources */,
 				B94EB1131D98B34E00A4A761 /* BoundedArray.swift in Sources */,
-				B94EB1151D98B61400A4A761 /* AccelerometerDataSet.swift in Sources */,
 				B9B68AA31D9887C200D0D386 /* AppDelegate.swift in Sources */,
 				B9B68AA51D9887C200D0D386 /* ActivityViewController.swift in Sources */,
 			);
