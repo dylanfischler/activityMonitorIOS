@@ -23,7 +23,7 @@ class ActivityViewController: UIViewController {
     var motionManager: CMMotionManager!
     
     var dataSet: LineChartDataSet!
-    var rawDataSet: Array<CMAccelerometerData>!
+    var rawDataSet: BoundedArray<ChartDataEntry>!
     
     @IBAction func switchListener(_ sender: AnyObject) {
         if accelSwitch.isOn {
@@ -50,13 +50,8 @@ class ActivityViewController: UIViewController {
     
     func accelUpdateHandler(data: CMAccelerometerData?, error: Error?) {
         if let accel = data?.acceleration {
-            self.rawDataSet.append(data!)
-            
-            if self.rawDataSet.count > 10 {
-                print("calling update handler")
-                self.chartUpdateHandler()
-            }
-            
+            self.rawDataSet.boundedAppend(obj: ChartDataEntry(x: data!.timestamp, y: accel.x))
+            self.chartUpdateHandler()
             
             // dispatch UI update on main thread
             DispatchQueue.main.async {
@@ -69,16 +64,7 @@ class ActivityViewController: UIViewController {
     }
     
     func chartUpdateHandler() {
-        var dataEntries: [ChartDataEntry] = []
-        
-        for dataObj: CMAccelerometerData in rawDataSet {
-            let dataEntry = ChartDataEntry(x: dataObj.timestamp, y: dataObj.acceleration.x)
-            dataEntries.append(dataEntry)
-        }
-        
-        print(dataEntries.count)
-        
-        dataSet = LineChartDataSet(values: dataEntries, label: "X")
+        dataSet = LineChartDataSet(values: rawDataSet.array, label: "X")
         let lineChartData = LineChartData(dataSet: dataSet)
         
         // dispatch UI update on main thread
@@ -90,23 +76,11 @@ class ActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         motionManager = CMMotionManager()
-        rawDataSet = Array()
+        rawDataSet = BoundedArray(bound: 100)
         
-//        chart = LineChartView(frame: CGRect(x: 0, y: 0, width: 480, height: 350))
         lineChartView.backgroundColor = NSUIColor.clear
         lineChartView.leftAxis.axisMinimum = 0.0
         lineChartView.rightAxis.axisMinimum = 0.0
-        
-//        var entries: [ChartDataEntry] = Array()
-//        
-//        for i in 0...10 {
-//            let dataEntry = ChartDataEntry(x: Double(i), y: Double(arc4random()))
-//            entries.append(dataEntry)
-//        }
-//
-//        
-//        dataSet = LineChartDataSet(values: entries, label: "X")
-//        lineChartView.data = LineChartData(dataSet: dataSet)
     }
 
     override func didReceiveMemoryWarning() {
