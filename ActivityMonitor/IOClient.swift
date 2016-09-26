@@ -30,8 +30,26 @@ public class IOClient: NSObject, GCDAsyncSocketDelegate {
     }
     
     func write(strData: String) {
-        print(strData)
-        let data: Data = strData.data(using: String.Encoding.utf8)!
+        // TODO: need to handle authentication
+        let closedString: String = strData + "\n"
+        print(closedString)
+        let data: Data = closedString.data(using: String.Encoding.utf8)!
         self.socket!.write(data, withTimeout: -1.0, tag: 0)
+        
+        self.socket!.readData(withTimeout: 1.0, tag: 0)
+        
     }
+    
+    public func socket(_ sock: GCDAsyncSocket, didWriteDataWithTag tag: Int) {
+        print("write complete with tag \(tag)")
+    }
+    
+    public func socket(_ sock: GCDAsyncSocket, didRead data: Data, withTag tag: Int) {
+        print("read complete with tag \(tag)")
+        
+        let dataStr = String(data: data, encoding: String.Encoding.utf8)
+        print(dataStr)
+    }
+    
+    
 }
