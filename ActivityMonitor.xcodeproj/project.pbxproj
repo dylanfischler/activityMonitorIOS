@@ -11,12 +11,17 @@
 		B94EB0E41D989C5F00A4A761 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94EB0DD1D989C1B00A4A761 /* Charts.framework */; };
 		B94EB0E51D989C5F00A4A761 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B94EB0DD1D989C1B00A4A761 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B94EB1131D98B34E00A4A761 /* BoundedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB1121D98B34E00A4A761 /* BoundedArray.swift */; };
+		B94EB1231D98D36C00A4A761 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94EB11E1D98D36100A4A761 /* CocoaAsyncSocket.framework */; };
+		B94EB1241D98D36C00A4A761 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B94EB11E1D98D36100A4A761 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B94EB1281D98D42D00A4A761 /* IOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB1271D98D42D00A4A761 /* IOClient.swift */; };
+		B94EB12A1D98DA7000A4A761 /* SensorReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94EB1291D98DA7000A4A761 /* SensorReading.swift */; };
 		B9B68AA31D9887C200D0D386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B68AA21D9887C200D0D386 /* AppDelegate.swift */; };
 		B9B68AA51D9887C200D0D386 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B68AA41D9887C200D0D386 /* ActivityViewController.swift */; };
 		B9B68AA71D9887C200D0D386 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B68AA61D9887C200D0D386 /* SecondViewController.swift */; };
 		B9B68AAA1D9887C200D0D386 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B68AA81D9887C200D0D386 /* Main.storyboard */; };
 		B9B68AAC1D9887C200D0D386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B68AAB1D9887C200D0D386 /* Assets.xcassets */; };
 		B9B68AAF1D9887C200D0D386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B68AAD1D9887C200D0D386 /* LaunchScreen.storyboard */; };
+		B9C2D3451D98DFE400C66346 /* AccelerometerReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C2D3441D98DFE400C66346 /* AccelerometerReading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,34 @@
 			remoteGlobalIDString = 06165F231D8110E600722320;
 			remoteInfo = Charts;
 		};
+		B94EB11D1D98D36100A4A761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CD990101B77868C0011A685;
+			remoteInfo = "iOS CocoaAsyncSocket";
+		};
+		B94EB11F1D98D36100A4A761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FC41F131B9D965000578BEB;
+			remoteInfo = "Mac CocoaAsyncSocket";
+		};
+		B94EB1211D98D36100A4A761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7D8B70C41BCFA15700D8E273;
+			remoteInfo = "tvOS CocoaAsyncSocket";
+		};
+		B94EB1251D98D36C00A4A761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CD9900F1B77868C0011A685;
+			remoteInfo = "iOS CocoaAsyncSocket";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +97,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B94EB1241D98D36C00A4A761 /* CocoaAsyncSocket.framework in Embed Frameworks */,
 				B94EB0E51D989C5F00A4A761 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -75,6 +109,9 @@
 		B94EB0D31D9891ED00A4A761 /* SensorSampleRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorSampleRate.swift; sourceTree = "<group>"; };
 		B94EB0D51D989C1B00A4A761 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		B94EB1121D98B34E00A4A761 /* BoundedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundedArray.swift; sourceTree = "<group>"; };
+		B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaAsyncSocket.xcodeproj; path = "../../../../Downloads/CocoaAsyncSocket-master/CocoaAsyncSocket.xcodeproj"; sourceTree = "<group>"; };
+		B94EB1271D98D42D00A4A761 /* IOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOClient.swift; sourceTree = "<group>"; };
+		B94EB1291D98DA7000A4A761 /* SensorReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorReading.swift; sourceTree = "<group>"; };
 		B9B68A9F1D9887C200D0D386 /* ActivityMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B68AA21D9887C200D0D386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9B68AA41D9887C200D0D386 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +120,7 @@
 		B9B68AAB1D9887C200D0D386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9B68AAE1D9887C200D0D386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9B68AB01D9887C200D0D386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C2D3441D98DFE400C66346 /* AccelerometerReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerReading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94EB1231D98D36C00A4A761 /* CocoaAsyncSocket.framework in Frameworks */,
 				B94EB0E41D989C5F00A4A761 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,8 +159,21 @@
 			isa = PBXGroup;
 			children = (
 				B94EB1121D98B34E00A4A761 /* BoundedArray.swift */,
+				B94EB1271D98D42D00A4A761 /* IOClient.swift */,
+				B94EB1291D98DA7000A4A761 /* SensorReading.swift */,
+				B9C2D3441D98DFE400C66346 /* AccelerometerReading.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		B94EB1181D98D36100A4A761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B94EB11E1D98D36100A4A761 /* CocoaAsyncSocket.framework */,
+				B94EB1201D98D36100A4A761 /* CocoaAsyncSocket.framework */,
+				B94EB1221D98D36100A4A761 /* CocoaAsyncSocket.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B9B68A961D9887C200D0D386 = {
@@ -129,6 +181,7 @@
 			children = (
 				B9B68AA11D9887C200D0D386 /* ActivityMonitor */,
 				B9B68AA01D9887C200D0D386 /* Products */,
+				B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */,
 				B94EB0D51D989C1B00A4A761 /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -173,6 +226,7 @@
 			);
 			dependencies = (
 				B94EB0E71D989C5F00A4A761 /* PBXTargetDependency */,
+				B94EB1261D98D36C00A4A761 /* PBXTargetDependency */,
 			);
 			name = ActivityMonitor;
 			productName = ActivityMonitor;
@@ -212,6 +266,10 @@
 					ProductGroup = B94EB0D61D989C1B00A4A761 /* Products */;
 					ProjectRef = B94EB0D51D989C1B00A4A761 /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = B94EB1181D98D36100A4A761 /* Products */;
+					ProjectRef = B94EB1171D98D36100A4A761 /* CocoaAsyncSocket.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -249,6 +307,27 @@
 			remoteRef = B94EB0E21D989C1B00A4A761 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		B94EB11E1D98D36100A4A761 /* CocoaAsyncSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaAsyncSocket.framework;
+			remoteRef = B94EB11D1D98D36100A4A761 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B94EB1201D98D36100A4A761 /* CocoaAsyncSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaAsyncSocket.framework;
+			remoteRef = B94EB11F1D98D36100A4A761 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B94EB1221D98D36100A4A761 /* CocoaAsyncSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaAsyncSocket.framework;
+			remoteRef = B94EB1211D98D36100A4A761 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -270,9 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B68AA71D9887C200D0D386 /* SecondViewController.swift in Sources */,
+				B94EB12A1D98DA7000A4A761 /* SensorReading.swift in Sources */,
+				B9C2D3451D98DFE400C66346 /* AccelerometerReading.swift in Sources */,
 				B94EB0D41D9891ED00A4A761 /* SensorSampleRate.swift in Sources */,
 				B94EB1131D98B34E00A4A761 /* BoundedArray.swift in Sources */,
 				B9B68AA31D9887C200D0D386 /* AppDelegate.swift in Sources */,
+				B94EB1281D98D42D00A4A761 /* IOClient.swift in Sources */,
 				B9B68AA51D9887C200D0D386 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +366,11 @@
 			isa = PBXTargetDependency;
 			name = Charts;
 			targetProxy = B94EB0E61D989C5F00A4A761 /* PBXContainerItemProxy */;
+		};
+		B94EB1261D98D36C00A4A761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "iOS CocoaAsyncSocket";
+			targetProxy = B94EB1251D98D36C00A4A761 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -24,8 +24,11 @@ class ActivityViewController: UIViewController {
     
     var dataSet: LineChartDataSet!
     
+    let ioClient: IOClient = IOClient()
+    
     let MULTIPLIER: Double = 10.0
     let BOUND: Int = 50
+    let USER_ID: String = "a9.34.40.69.36.97.99.8b.3a.23"
     
     @IBAction func switchListener(_ sender: AnyObject) {
         if accelSwitch.isOn {
@@ -52,8 +55,10 @@ class ActivityViewController: UIViewController {
     
     func accelUpdateHandler(data: CMAccelerometerData?, error: Error?) {
         if let accel = data?.acceleration {
-//            self.accelDataSet.append(data: data!)
             self.chartUpdateHandler(data: data!)
+            let accelReading = AccelerometerReading(x: accel.x, y: accel.y, z: accel.z, userID: self.USER_ID, deviceType: "MOBILE", deviceID: "", timestamp: UInt64(data!.timestamp))
+            
+            ioClient.write(strData: accelReading.toJSONString())
             
             // dispatch UI update on main thread
             DispatchQueue.main.async {
